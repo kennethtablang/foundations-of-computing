@@ -104,7 +104,7 @@ export default function FlashcardDeck() {
                 if (e.key === "ArrowLeft") go(-1);
               }}
             >
-              <div className="flash-face glass glass-strong">
+              <div className="flash-face front glass glass-strong">
                 <div className="top">
                   <span className="badge badge-topic">Handout {card.topic}</span>
                   {known.includes(keyOf(card)) && <span className="badge badge-easy">Known</span>}

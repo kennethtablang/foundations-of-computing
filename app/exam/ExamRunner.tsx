@@ -286,18 +286,6 @@ export default function ExamRunner() {
         </div>
       )}
 
-      {!practice && (
-        <div className="glass" style={{ marginTop: 16, padding: 14, borderRadius: 22 }}>
-          <div className="dots">
-            {items.map((_, i) => (
-              <button key={i} aria-label={`Go to question ${i + 1}`}
-                className={`dot ${i === current ? "current" : answers[i] !== null ? "answered" : ""}`}
-                onClick={() => setCurrent(i)}>{i + 1}</button>
-            ))}
-          </div>
-        </div>
-      )}
-
       <div className="row" style={{ marginTop: 16 }}>
         {!practice && (
           <button className="btn btn-glass icon-btn" aria-label="Previous question" disabled={current === 0}

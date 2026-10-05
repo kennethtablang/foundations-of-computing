@@ -317,28 +317,19 @@ a { color: inherit; text-decoration: none; }
 .score-ring .label { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; }
 .score-ring .label b { font-family: var(--font-rounded); font-size: 40px; font-weight: 800; letter-spacing: -0.03em; display: block; }
 
-.dots { display: flex; flex-wrap: wrap; gap: 6px; }
-.dot {
-  width: 30px; height: 30px; border-radius: 50%; border: 0; cursor: pointer;
-  font-size: 12px; font-weight: 600; font-family: var(--font-rounded);
-  background: var(--separator); color: var(--text-2);
-}
-.dot.answered { background: var(--tint-soft); color: var(--tint); }
-.dot.current { background: var(--tint); color: #fff; }
-
 /* Flashcards */
-.flash-wrap { perspective: 1400px; height: min(62dvh, 460px); touch-action: pan-y; user-select: none; -webkit-user-select: none; }
-.flash {
-  position: relative; width: 100%; height: 100%; cursor: pointer;
-  transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(.2,.8,.2,1);
-}
-.flash.flipped { transform: rotateY(180deg); }
+.flash-wrap { height: min(52dvh, 420px); touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.flash { position: relative; width: 100%; height: 100%; cursor: pointer; perspective: 1400px; outline: none; }
+/* Each face rotates on its own (backdrop-filter breaks preserve-3d); visibility swaps at the halfway point. */
 .flash-face {
   position: absolute; inset: 0; padding: 28px 24px;
   display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-  -webkit-backface-visibility: hidden; backface-visibility: hidden;
+  transition: transform 0.6s cubic-bezier(.2,.8,.2,1), opacity 0s linear 0.2s;
 }
-.flash-face.back { transform: rotateY(180deg); }
+.flash-face.back { transform: rotateY(-180deg); opacity: 0; pointer-events: none; }
+.flash.flipped .flash-face.front { transform: rotateY(180deg); opacity: 0; pointer-events: none; }
+.flash.flipped .flash-face.back { transform: rotateY(0deg); opacity: 1; pointer-events: auto; }
+.flash-face.back .def, .flash-face.back .top { transform: none; }
 .flash-face .term { font-family: var(--font-display); font-size: 30px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; }
 .flash-face .def { font-size: 19px; line-height: 1.5; font-weight: 500; }
 .flash-face .hint { position: absolute; bottom: 18px; font-size: 13px; color: var(--text-3); }
