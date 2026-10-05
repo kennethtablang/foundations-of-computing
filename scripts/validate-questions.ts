@@ -23,5 +23,12 @@ for (const x of questions) {
 
 console.log(`\nTotal: ${questions.length}`, tally);
 console.log(`Answer tied for longest: ${ansLongestTie}, answer strictly shortest: ${ansShortest}`);
-if (problems || questions.length !== 200) { console.log(`${problems} problem(s)`); process.exit(1); }
+const expected: Record<string, number> = { "03": 112, "04": 88, "05": 100, "06": 100, "07": 100, "08": 100 };
+for (const [t, want] of Object.entries(expected)) {
+  const got = tally[`topic ${t}`] ?? 0;
+  if (got !== want) { problems++; console.log(`Handout ${t}: expected ${want} questions, found ${got}`); }
+}
+if (new Set(questions.map((x) => x.id)).size !== questions.length) { problems++; console.log("Duplicate question ids"); }
+
+if (problems) { console.log(`${problems} problem(s)`); process.exit(1); }
 console.log("All checks passed.");

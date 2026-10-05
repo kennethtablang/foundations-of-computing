@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "IT Reviewer",
-  description: "Flashcards, reviewer notes, and a 200-question practice exam for Handouts 03 and 04.",
+  description: "Flashcards, reviewer notes, and a 600-question practice exam for Handouts 03 to 08.",
   appleWebApp: { capable: true, title: "IT Reviewer", statusBarStyle: "black-translucent" },
 };
 

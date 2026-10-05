@@ -3,18 +3,18 @@
 import { useState } from "react";
 import Rich from "@/components/Rich";
 import { notes } from "@/data/notes";
-import { TOPIC_TITLES, type Topic } from "@/data/types";
+import { TOPIC_TITLES, TOPICS, type Topic } from "@/data/types";
 
 export default function ReviewerView() {
   const [topic, setTopic] = useState<Topic>("03");
   return (
     <>
       <div className="glass segmented" role="group" aria-label="Handout" style={{ marginBottom: 16 }}>
-        {(["03", "04"] as const).map((t) => (
-          <button key={t} aria-pressed={topic === t} onClick={() => setTopic(t)}>Handout {t}</button>
+        {TOPICS.map((t) => (
+          <button key={t} aria-pressed={topic === t} onClick={() => setTopic(t)}>{t}</button>
         ))}
       </div>
-      <p className="subtitle" style={{ fontWeight: 600, color: "var(--text)" }}>{TOPIC_TITLES[topic]}</p>
+      <p className="subtitle" style={{ fontWeight: 600, color: "var(--text)" }}>Handout {topic}: {TOPIC_TITLES[topic]}</p>
       <div className="stack" key={topic}>
         {notes[topic].map((s) => (
           <section key={s.title} className="glass note-card fade-in">

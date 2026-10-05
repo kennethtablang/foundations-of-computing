@@ -123,4 +123,194 @@ export const notes: Record<Topic, NoteSection[]> = {
       ],
     },
   ],
+  "05": [
+    {
+      title: "Computer networking",
+      points: [
+        "Links computers to **share resources through the internet**: web browsing, email, file and image sharing, downloading music.",
+        "Companies, schools, and agencies use networks for **word processing, scientific computation, and control processing**.",
+      ],
+    },
+    {
+      title: "Networks by geography (smallest → largest)",
+      points: [
+        "**PAN**: smallest; personal devices (earphones-to-smartphone, computer-to-printer).",
+        "**LAN**: a building, house, or several buildings in a limited area.",
+        "**CAN**: multiple buildings on a campus (universities, large organizations).",
+        "**MAN**: city buildings, traffic lights, parking meters, connected **wirelessly**.",
+        "**WAN**: cities, provinces, countries; can be made of **LANs and MANs**.",
+      ],
+    },
+    {
+      title: "Network architecture",
+      points: [
+        "A **diagram** of network devices and services that serve the clients' connectivity needs.",
+        "Biggest goal of networks: **fulfilling the needs of the client**.",
+        "Three enterprise types: **access networks** (users and devices in campuses and branches), **data center networks** (link servers with data and apps), and **WANs** (users to services, e.g., hospital staff to health apps).",
+      ],
+    },
+    {
+      title: "OSI model",
+      points: [
+        "**Open Systems Interconnection**, by the **International Organization for Standardization**, **1984**. An open standard for interlinking different networks.",
+        "**Seven layers**, from the physical interface to the application interface. Aims for hardware/software **compatibility** and faster new technologies.",
+        "**1 Physical**: electrical and mechanical connections; signal and media.",
+        "**2 Data link**: error recovery, flow control, sequencing; the **MAC** layer; flow of data.",
+        "**3 Network**: network controller; packets with **routing headers**; addressing and routing.",
+        "**4 Transport**: **end-to-end delivery**, message integrity, segmenting and reassembling; error-free packets.",
+        "**5 Session**: start, manage, and end connections.",
+        "**6 Presentation**: converts code; **compression and encryption**; protocol conversion and data translation.",
+        "**7 Application**: works with browsers and email; records the message, understands the request.",
+      ],
+    },
+    {
+      title: "Wired vs. wireless",
+      points: [
+        "**Wired** (cabling and connectors). Pros: faster, inexpensive, no outside interference. Cons: special tools, labor-intensive.",
+        "**Wireless** (radio signals; most common at home). Pros: user mobility, simple installation. Cons: security issues, slower.",
+      ],
+    },
+    {
+      title: "Network devices",
+      points: [
+        "**LAN Ethernet cable**: limited by length and durability; too long or poor quality gives a bad signal.",
+        "**Hub**: broadcasts data to all connected devices. **Switch**: direct sender-to-destination link for privacy; best for interconnecting.",
+        "**Cable modem**: broadband to the ISP over a cable line; needs a **splitter** for cable TV.",
+        "**Server**: provides resources, data, services; handles databases, email, shared files.",
+        "**Firewall**: monitors traffic using security policies; the barrier between a private network and the public Internet.",
+        "**Wireless access point**: links wireless devices to wired LANs; speed depends on the clients' wireless tech.",
+        "**Wireless router**: router + switch + access point; most common way to reach the ISP. **Wi-Fi modem**: modem + router.",
+      ],
+    },
+    {
+      title: "Topologies",
+      points: [
+        "**Protocol** = the rules for exchanging info. **Topology** = the physical and logical arrangement of nodes.",
+        "**Point-to-point**: simplest; two devices connected directly.",
+        "**Token ring**: deterministic, fixed time slots. A bad token can stop traffic. Replaced by **Ethernet**.",
+        "**Bus**: shared **coaxial cable**; all devices see the traffic and wait for pauses. Rarely used now.",
+        "**Star**: most common in LANs; all devices connect to a central switch or hub. A **switch** is better than a hub (a multiport repeater).",
+        "**Mesh**: many paths. **Fully meshed** = a direct path to every device; **partially meshed** = multiple paths but not all direct.",
+      ],
+    },
+  ],
+  "06": [
+    {
+      title: "Internet privacy",
+      points: [
+        "A **fundamental human right**: privacy of an owner's **displayed, stored, and confidential** information.",
+        "Importance: **control over identity and personal info**. Without it: **identity theft** and **stealing money**.",
+        "Without privacy, **third-party companies** collect and analyze every online activity.",
+      ],
+    },
+    {
+      title: "Protecting your privacy",
+      points: [
+        "**Secure the browser**: Chrome and Firefox are the most used, but security is **not automatic**. Check reviews; try browsers for a period.",
+        "**VPN**: the **best way** to have privacy. Changes the IP address and **encrypts** traffic against snoopers.",
+        "**Double-check links**: never trust links from suspicious emails, sketchy sites, or ads. Phishing links **resemble trusted brands**.",
+        "**Limit social media sharing**: lock the account or make it private. Don't post clues like a **favorite color or pet's name**.",
+        "**Multi-factor authentication**: an extra step besides a password (e.g., Google's code sent to your phone).",
+      ],
+    },
+    {
+      title: "Network security technologies",
+      points: [
+        "Network security ensures **integrity, confidentiality, and accessibility**.",
+        "**Firewall**: a hardware or software wall between trusted and untrusted networks; allows only verified traffic by preset rules.",
+        "**IDS**: watches the network or host for malicious activity. **Network IDS** uses **signature-based** detection and machine learning.",
+        "**HIDS**: runs on each host; compares **file system snapshots** and alerts the admin when critical files change.",
+        "**WPA3**: the latest wireless security protocol by the **Wi-Fi Alliance**. Filters at the **entry**; **forward secrecy** keeps past sessions safe.",
+        "**VPN**: connects a remote device to the enterprise server by **piggybacking on a public network**.",
+        "**Email security**: emails can embed scripts. Best defense: **deep-learning spam filters** that filter spam domains.",
+      ],
+    },
+    {
+      title: "Consequences of failure (and fixes)",
+      points: [
+        "The internet is a collection of networks, so failures share consequences. They fail when **privacy and security aren't monitored**.",
+        "**Revenue loss**: even minutes of downtime. Fix: **proper cable management** and check-ups.",
+        "**Maintenance cost**: time, new cables, upgraded devices. Fix: **daily monitoring**.",
+        "**Lesser productivity**: staff stay idle. Fix: **backup network and backup ISP**.",
+        "**Damaged reputation**: seen as negligence and bad management. Fix: maintain systems and reassure everyone.",
+        "**Legal repercussions**: missed deliverables. Fix: **alert every concerned party** right away.",
+      ],
+    },
+  ],
+  "07": [
+    {
+      title: "Moore's Law",
+      points: [
+        "Transistors in an IC **double every two years** (observed by **Gordon Moore, 1965**).",
+        "Chip example: **P50,000** (1970) → P25,000 (1972) → P12,500 (1974) → **P48.50** (1990) → **under P1.00** today.",
+        "**2015**: Moore said the law would be **less reliable** as companies shift to **non-silicon** computing.",
+      ],
+    },
+    {
+      title: "Six innovations",
+      points: [
+        "**Graphene transistors**: a one-atom-thick sheet, the most conductive material; rolled into **nanotubes**. **2019**: a 16-bit nanotube CPU printed **\"Hello, World!\"**.",
+        "**Quantum computing**: **qubits**; 1 qubit = 2 bits (2^n). Subatomic particles follow **probability**. Uses: drug properties, complex circuits.",
+        "**DNA computing**: **parallel processing** checks all answers at once; tiny storage; very stable (**cave bear**, 300 millennia). DNA fingerprinting; decoding banking, military, and communications data.",
+        "**Neuromorphic**: imitates the **human brain** with less energy. **Intel (2020)**: small mammal's neural capacity.",
+        "**Optical**: **photons** and light-intensity levels; speed of light; early stage. Fiber optics, optical chips, wireless optical networks.",
+        "**Distributed**: **Folding@home** (proteins; Alzheimer's, cancer, COVID-19). ~**750,000** participants, **1.5 exaflops**, 75% of **El Capitan**.",
+        "The future: **non-silicon transistors**, **deep-learning software**, and **crowdsourced computing power**.",
+      ],
+    },
+    {
+      title: "Collapse OS",
+      points: [
+        "An **open-source** OS for after a societal collapse, by **Virgil Dupras**; helps reconfigure damaged smartphones.",
+        "**2019**: Dupras envisioned the global supply chain collapsing by **2030**. Political and social power remain; **scavengers** win.",
+        "Runs on **Z80 8-bit** CPUs (desktops, cash registers, graphing calculators).",
+        "Features: improvised machines and interfaces, compile assembler, read/write storage, edit text, **self-replicate** (with enough RAM and storage), read SD cards. Kernels joined by **glue code**.",
+        "Roadmap: **8080 and 6502** CPUs; **LCD and E-ink**; floppies, CDs, RAM/ROMs; **TI-83+/TI-84+** and **TRS-80s**.",
+        "Goal: return a post-collapse civilization to the **computer age** using simpler, scavenged chips.",
+      ],
+    },
+  ],
+  "08": [
+    {
+      title: "Digital divide",
+      points: [
+        "The gap between those **with and without Internet access**.",
+        "Four factors: **availability** (no extra mile needed), **affordability** (household income), **quality of service** (speed for the price), **relevance** (local need and interest).",
+        "Measured by **device saturation** or **ISP coverage**. UN Broadband Commission: **3.6 billion** unconnected, about **53.6%** of the world (2022).",
+      ],
+    },
+    {
+      title: "Impacts and solutions",
+      points: [
+        "Lower-income people are hit hardest. Lost **healthcare** (a social factor of health), **economic** (e-commerce), and **educational** opportunities (seen in COVID-19).",
+        "There is **no single solution**. The unconnected live in **low-density or low-income** areas that telcos don't find feasible to serve.",
+        "**Community networks** bring affordable access. **Effective Broadband for Health** (Internet Society, **Nepal**): telehealth. **Murambinda** (**Zimbabwe**): education, healthcare, agriculture, and digital literacy.",
+      ],
+    },
+    {
+      title: "Digital inequality",
+      points: [
+        "Differences in **knowledge and skill** in using technology across backgrounds, IT experience, and demographics.",
+        "Critical for **social and economic growth**; it resists national development.",
+        "**Divide** = haves vs. have-nots of **access**. **Inequality** = differences in **IT skills** even with access.",
+      ],
+    },
+    {
+      title: "Five elements of digital inequality",
+      points: [
+        "**Educational**: teach skills; lack of basic education and tech skills.",
+        "**Infrastructural**: reliable **Internet towers and power supply** in rural areas.",
+        "**Social**: trust and awareness; rural and illiterate citizens are unaware, unmotivated, unsupported.",
+        "**Economical**: lack of **digitization investment**; e-commerce sites fail.",
+        "**Usable design**: **UX, multilingual UI, accessibility**.",
+      ],
+    },
+    {
+      title: "Digital equity and inclusion",
+      points: [
+        "**Digital equity**: IT capacity for full participation in **society, democracy, and the economy**; matters for civic and cultural duties, jobs, essential services.",
+        "**Digital inclusion**: access to ICT for everyone, **including the least privileged**. Strategies must **evolve as fast as technology**.",
+      ],
+    },
+  ],
 };

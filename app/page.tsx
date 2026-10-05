@@ -3,7 +3,7 @@ import RecentScores from "@/components/RecentScores";
 import { BookIcon, CardsIcon, ExamIcon, ListIcon } from "@/components/Icons";
 import { flashcards } from "@/data/flashcards";
 import { questions } from "@/data/questions";
-import { TOPIC_TITLES } from "@/data/types";
+import { TOPIC_TITLES, TOPICS } from "@/data/types";
 
 const items = [
   { href: "/exam", title: "Exam Training", sub: "Easy, medium, hard, or mixed", color: "linear-gradient(160deg,#5ac8fa,#007aff)", Icon: ExamIcon },
@@ -17,7 +17,7 @@ export default function Home() {
     <main className="page fade-in">
       <p className="subtitle" style={{ margin: "6px 4px 0", fontWeight: 600, textTransform: "uppercase", fontSize: 13 }}>IT2221 · Foundations of Computing</p>
       <h1 className="large-title">Reviewer</h1>
-      <p className="subtitle">Study anywhere on your phone. {questions.length} exam questions from Handouts 03 and 04.</p>
+      <p className="subtitle">Study anywhere on your phone. {questions.length} exam questions from Handouts 03 to 08.</p>
 
       <section className="glass hero">
         <h2>Your progress</h2>
@@ -41,7 +41,7 @@ export default function Home() {
 
       <div className="section-label">Topics covered</div>
       <div className="glass list">
-        {(["03", "04"] as const).map((t) => (
+        {TOPICS.map((t) => (
           <div key={t} className="list-item">
             <span className="badge badge-topic">Handout {t}</span>
             <span style={{ flex: 1, fontWeight: 500 }}>{TOPIC_TITLES[t]}</span>

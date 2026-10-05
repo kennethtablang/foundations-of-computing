@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { SearchIcon } from "@/components/Icons";
 import { questions } from "@/data/questions";
-import type { Kind, Level, Topic } from "@/data/types";
+import { TOPICS, type Kind, type Level, type Topic } from "@/data/types";
 import { seededShuffle } from "@/lib/shuffle";
 
 const LETTERS = ["A", "B", "C", "D"];
@@ -51,7 +51,7 @@ export default function QuestionBank() {
       </div>
 
       <div className="chips">
-        {(["all", "03", "04"] as const).map((t) => (
+        {(["all", ...TOPICS] as const).map((t) => (
           <button key={t} className="chip" aria-pressed={topic === t} onClick={() => setTopic(t)}>
             {t === "all" ? "All handouts" : `Handout ${t}`}
           </button>

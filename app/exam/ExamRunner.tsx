@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { ChevronLeft, CloseIcon } from "@/components/Icons";
 import { questions } from "@/data/questions";
-import type { Kind, Level, Question, Topic } from "@/data/types";
+import { TOPICS, type Kind, type Level, type Question, type Topic } from "@/data/types";
 import { shuffle } from "@/lib/shuffle";
 import { KEYS, load, save, type Attempt } from "@/lib/storage";
 
@@ -104,7 +104,7 @@ export default function ExamRunner() {
 
         <div className="section-label">Handout</div>
         <Segmented label="Handout" value={settings.topic} onChange={(topic) => update({ topic })}
-          options={[{ v: "both", t: "Both" }, { v: "03", t: "Handout 03" }, { v: "04", t: "Handout 04" }]} />
+          options={[{ v: "both" as TopicOpt, t: "All" }, ...TOPICS.map((v) => ({ v, t: v }))]} />
 
         <div className="section-label">Difficulty</div>
         <Segmented label="Difficulty" value={settings.level} onChange={(level) => update({ level })}

@@ -3,10 +3,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, ShuffleIcon } from "@/components/Icons";
 import { flashcards, type Flashcard } from "@/data/flashcards";
+import { TOPICS, type Topic } from "@/data/types";
 import { shuffle } from "@/lib/shuffle";
 import { KEYS, load, save } from "@/lib/storage";
 
-type Filter = "all" | "03" | "04";
+type Filter = "all" | Topic;
 const keyOf = (c: Flashcard) => `${c.topic}:${c.front}`;
 
 export default function FlashcardDeck() {
@@ -58,9 +59,9 @@ export default function FlashcardDeck() {
   return (
     <>
       <div className="glass segmented" role="group" aria-label="Topic">
-        {(["all", "03", "04"] as const).map((f) => (
+        {(["all", ...TOPICS] as const).map((f) => (
           <button key={f} aria-pressed={filter === f} onClick={() => reset(f)}>
-            {f === "all" ? "All" : `Handout ${f}`}
+            {f === "all" ? "All" : f}
           </button>
         ))}
       </div>
