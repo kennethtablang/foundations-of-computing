@@ -227,7 +227,6 @@ export default function ExamRunner() {
   const picked = answers[current];
   const practice = settings.mode === "practice";
   const revealed = practice && picked !== null;
-  const answeredCount = answers.filter((a) => a !== null).length;
   const isLast = current === items.length - 1;
 
   const choose = (ci: number) => {
@@ -244,9 +243,8 @@ export default function ExamRunner() {
         </button>
         <div style={{ flex: 1 }}>
           <div className="row small muted" style={{ marginBottom: 6, fontVariantNumeric: "tabular-nums" }}>
-            <span>Question {current + 1} of {items.length}</span>
             <span className="spacer" />
-            {practice ? <span>Score {score}</span> : <span>{answeredCount} answered</span>}
+            {practice && <span>Score {score}</span>}
           </div>
           <div className="progress"><div style={{ width: `${((current + (picked !== null ? 1 : 0)) / items.length) * 100}%` }} /></div>
         </div>
@@ -294,7 +292,7 @@ export default function ExamRunner() {
           </button>
         )}
         <button className="btn btn-primary" style={{ flex: 1 }} disabled={practice && picked === null} onClick={next}>
-          {isLast ? (practice ? "See results" : `Submit (${answeredCount}/${items.length})`) : "Next"}
+          {isLast ? (practice ? "See results" : "Submit") : "Next"}
         </button>
       </div>
     </>
