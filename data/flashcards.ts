@@ -1,0 +1,82 @@
+import type { Topic } from "./types.ts";
+
+export interface Flashcard {
+  topic: Topic;
+  front: string;
+  back: string;
+}
+
+const c = (topic: Topic, front: string, back: string): Flashcard => ({ topic, front, back });
+
+export const flashcards: Flashcard[] = [
+  // ── Handout 03 ─────────────────────────────────────────────────────
+  c("03", "Computer", "A programmable computing device that can process, store, and retrieve data according to software instructions."),
+  c("03", "Original meaning of \"computer\"", "A person who manually carried out calculations, not a machine."),
+  c("03", "1940s–1950s computers", "Large machines made of thousands of vacuum tubes that filled an entire room."),
+  c("03", "Digital computer", "A sequential device that operates on data one at a time, using binary 0 and 1. One transistor = one binary digit."),
+  c("03", "Analog computer", "Represents data with physical quantities (e.g., electric voltage) that reflect what is being modeled."),
+  c("03", "James Thomson", "Did the foundational work on analog computation (19th century). Invented the wheel-and-disc integrator."),
+  c("03", "Lord Kelvin", "Thomson's brother. Detailed a general-purpose analog machine for linear differential equations and built a tide-predicting computer (Port of Liverpool, used until the 1960s)."),
+  c("03", "Tide-predicting machine", "Forecasts tide patterns and their unsteady height variations."),
+  c("03", "Vannevar Bush", "Developed the Differential Analyzer, the first large-scale, general-purpose analog computer."),
+  c("03", "Differential Analyzer", "100 tons; wheels, discs, shafts, gears; up to 150 motors; needed long set-up time by technicians."),
+  c("03", "Weakness of analog data", "Compact, but constantly subjected to noise corruption."),
+  c("03", "Capacitor vs. transistors", "One capacitor holds one continuous variable in analog; digital needs various transistors."),
+  c("03", "End of analog computers", "Phased out shortly after World War II."),
+  c("03", "1st Generation", "Vacuum tubes: current flowing through a vacuum. Three terminals: cathode, grid, plate."),
+  c("03", "1st-gen examples", "ABC (1942), Colossus (1944), ENIAC (mid-1940s), UNIVAC I (1951), Whirlwind (1951), IBM 701 (1953)."),
+  c("03", "ENIAC", "Electronic Numerical Integrator and Computer."),
+  c("03", "2nd Generation", "Transistors: smaller, cheaper, and more reliable than vacuum tubes."),
+  c("03", "Transistor", "Three-terminal solid-state device. Current/voltage at the third terminal controls the flow between the other two."),
+  c("03", "University of Manchester", "Built one of the earliest transistor computers: prototype in 1953, full-size version in 1955."),
+  c("03", "3rd Generation", "Integrated circuits on semiconductors. Keyboards, monitors, and an OS; several applications at once."),
+  c("03", "Jack Kilby", "Texas Instruments engineer who invented the integrated circuit in 1958, using germanium."),
+  c("03", "Integrated circuit (IC)", "A set of electronic circuits on a small chip of semiconductor material."),
+  c("03", "4th Generation", "Microprocessors: thousands of ICs on a single silicon chip. Fits in the palm."),
+  c("03", "Intel 4004", "World's first microprocessor. Gave a computer's functions at chip level, including the ALU and control unit."),
+  c("03", "Hardware vs. Software", "Hardware is the physical machine. Software is the set of instructions telling it what to do."),
+  c("03", "Three key components", "Input Unit, Output Unit, and the CPU (memory unit, control unit, ALU)."),
+  c("03", "Input Unit", "Takes user commands and converts them to digital language. E.g., keyboard, mouse, scanner, joystick, trackball."),
+  c("03", "CPU", "Processes data from the input unit, converting human language into machine language."),
+  c("03", "Memory Unit", "Saves data immediately when it reaches the processor; stores input and result data. Measured in bits and bytes (8 bits)."),
+  c("03", "Control Unit", "Central component of the CPU. Converts human to machine language, maintains data flow, transfers commands to the ALU."),
+  c("03", "ALU", "Arithmetic-Logic Unit: math (add, subtract, multiply), data comparison, and decision-making, only when necessary."),
+  c("03", "Output Unit", "Shows results. Monitor (primary), printers, projectors, speakers, headphones, plotters."),
+  c("03", "Operating System (OS)", "Software programs and commands that control hardware to make it usable. Provides hardware sharing, error recovery, network management."),
+  c("03", "OS Advantages", "Abstraction (hides hardware details), Executable programs, User-friendly."),
+  c("03", "OS Disadvantages", "Volatility (data loss), Expensive (costly for small orgs), Unpredictable (never secure)."),
+  c("03", "Microsoft Windows", "Family of graphical OSs. Windows 1.0 in 1985 to compete with Apple's 1984 GUI. Over 90% of the PC/laptop market."),
+  c("03", "Mac OS", "Apple's desktop OS for Macintosh. Has a GUI, multitasking, and memory security."),
+  c("03", "Android", "By Google and the Open Handset Alliance. First phone in late 2008. Most widely used mobile OS."),
+  c("03", "iOS", "Apple's mobile OS, developed from Mac OS X in 2007. Multitasking came in 2010 with iOS 4.0."),
+
+  // ── Handout 04 ─────────────────────────────────────────────────────
+  c("04", "Web (World Wide Web)", "A network of web pages found using a link address, interconnected through hypertext/hypermedia links."),
+  c("04", "Hyperlinks", "Electronic connections that link similar information so users can move smoothly between pages."),
+  c("04", "Tim Berners-Lee", "British scientist who invented the Web in 1989 while working at CERN."),
+  c("04", "Web proposals", "First: March 1989. Second: May 1990. Formalized in November 1990 with Robert Cailliau."),
+  c("04", "Robert Cailliau", "Belgian systems engineer who helped formalize the Web management proposal."),
+  c("04", "First web server", "Ran at CERN by the end of 1990 on a NeXT computer. Label: \"This machine is a server. DO NOT POWER IT DOWN!!\""),
+  c("04", "First website", "Went live August 6, 1991 at info.cern.ch/hypertext/WWW/TheProject.html."),
+  c("04", "Going global", "March 1991: available to CERN users. August 1991: announced on Internet newsgroups."),
+  c("04", "NCSA", "National Center for Supercomputing Applications. Released PC and Macintosh versions by 1993."),
+  c("04", "Internet", "A massive interconnection of networks connecting millions of computers. Made of physical cables (copper, TV, fiber optic)."),
+  c("04", "Wi-Fi and 3G/4G", "Wireless networks that still rely on physical cables to access the Internet."),
+  c("04", "How a site loads", "Your computer sends a request to the server; the server retrieves the site and sends the data back."),
+  c("04", "J.C.R. Licklider", "In 1962, started the idea of a global computer network."),
+  c("04", "Packet switching", "Theory by Kleinrock, Merrill, and Roberts that pioneered the first wide-area network."),
+  c("04", "ARPANET", "Advanced Research Projects Agency Network. Plan by Lawrence G. Roberts; standard for military networking. Decommissioned in the 1990s."),
+  c("04", "PhoneNet (1982)", "Connected to ARPANET and Telenet (first commercial network). Enabled email between nations."),
+  c("04", "Domain Name System", "Developed by Mockapetris, Postel, and Partridge to manage growing users via domain names."),
+  c("04", "symbolics.com", "First registered domain (1984), by a computer manufacturer."),
+  c("04", "HTML & URL", "Hypertext Markup Language and Uniform Resource Locator, developed at CERN in the 1990s."),
+  c("04", "1995 milestones", "Windows 95 launched; Amazon, Yahoo, and eBay followed; Java enabled website animation."),
+  c("04", "Dot-com bubble", "1995–2000: investors funded Internet startups hoping for huge profits. Most were gone by 2001."),
+  c("04", "The 2000s", "Google beat Yahoo! and MSN Search; Wi-Fi and smartphones emerged."),
+  c("04", "Web vs. Internet", "The internet is the infrastructure; the web is an application/information system built on it."),
+  c("04", "SMTP", "Simple Mail Transfer Protocol, a secure email relay service. Email works without the web."),
+  c("04", "Impact: Communication", "Instant email and social media, but impulsive messages risk misunderstanding. Re-think before sending."),
+  c("04", "Impact: Information", "E-books and search engines widen access, but fake news spreads. Fact-check with reputable sources."),
+  c("04", "Impact: Entertainment", "Social media, Twitch, YouTube Gaming, Netflix, Disney+, Spotify, Apple Music. Downside: lack of human connection and fatigue."),
+  c("04", "Impact: Education", "COVID-19 lockdowns pushed online learning (video calls, NEO eLMS). Risk: over-reliance. Fix: focused learning and supervision."),
+];
